@@ -86,7 +86,7 @@ export default function SignUpPage() {
   // Handle Sign-Up
   const onSubmit = async (data: z.infer<typeof signUpSchema>) => {
     try {
-      const res = await axios.post<ApiResponse>("/api/sign-up", data);
+      await axios.post<ApiResponse>("/api/sign-up", data);
       toast.success("OTP sent to your email!");
       setCurrentUsername(data.username);
       setShowOtp(true);
@@ -100,7 +100,7 @@ export default function SignUpPage() {
   // Verify OTP
   const verifyOtp = async (data: z.infer<typeof otpSchema>) => {
     try {
-      const res = await axios.post("/api/verify-code", {
+      await axios.post("/api/verify-code", {
         username: currentUsername,
         code: data.otp,
       });

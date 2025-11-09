@@ -27,7 +27,7 @@ export default function PublicUserPage() {
         if (!data.success) throw new Error(data.message);
         setAccepting(Boolean(data.user.isAcceptingMessage));
         shuffleSuggestions();
-      } catch (err) {
+      } catch {
         toast.error("User not found");
       } finally {
         setLoading(false);
