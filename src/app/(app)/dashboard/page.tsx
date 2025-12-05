@@ -58,6 +58,7 @@ export default function DashboardPage() {
 
   const [loading, setLoading] = useState(true);
   const [busyToggle, setBusyToggle] = useState(false);
+
   const [busyDelete, setBusyDelete] = useState<string | null>(null);
   const [me, setMe] = useState<MeResponse["user"] | null>(null);
   const [origin, setOrigin] = useState<string>("");
@@ -188,7 +189,7 @@ export default function DashboardPage() {
 
   if (status === "loading" || loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-white to-slate-50 p-6">
+      <div className="min-h-screen bg-linear-to-b from-white to-slate-50 p-6">
         <div className="max-w-5xl mx-auto animate-pulse">
           <div className="h-10 w-48 rounded bg-slate-200 mb-4" />
           <div className="h-24 rounded bg-slate-200 mb-6" />
@@ -204,7 +205,8 @@ export default function DashboardPage() {
       <div className="min-h-screen flex items-center justify-center p-6">
         <Card className="p-8 max-w-md w-full text-center">
           <p className="text-slate-700 mb-4">You are not signed in.</p>
-          <Button onClick={() => router.replace("/sign-in")}>Go to Sign In</Button>
+          <Button className="bg-indigo-900 text-white hover:fade-in" onClick={() => router.replace("/sign-in")}>Go to Sign In</Button>
+          
         </Card>
       </div>
     );
@@ -214,7 +216,7 @@ export default function DashboardPage() {
   const total = messages.length;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-slate-50 p-6">
+    <div className="min-h-screen bg-linear-to-b from-white to-slate-50 p-6">
       <div className="max-w-5xl mx-auto space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
@@ -228,9 +230,9 @@ export default function DashboardPage() {
               <RefreshCcw className="mr-2 h-4 w-4" />
               Refresh
             </Button>
-            <Button variant="destructive" onClick={doLogout}>
-              <LogOut className="mr-2 h-4 w-4" />
-              Logout
+            <Button variant="outline" className="bg-red-500" onClick={doLogout}>
+              <LogOut className="mr-2 h-4 w-4  text-white" />
+                 <p className="text-white">Logout</p>
             </Button>
           </div>
         </div>
@@ -277,7 +279,7 @@ export default function DashboardPage() {
 
             <div className="flex items-center gap-3">
               <span className="text-sm text-slate-700">Accepting Messages</span>
-              <Switch
+              <Switch 
                 disabled={busyToggle}
                 checked={accepting}
                 onCheckedChange={onToggleAccepting}

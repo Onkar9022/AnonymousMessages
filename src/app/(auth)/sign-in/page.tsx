@@ -54,7 +54,7 @@ export default function SignInPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white to-slate-100 px-4 sm:px-6 md:px-8 py-8">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-white to-slate-100 px-4 sm:px-6 md:px-8 py-8">
       <div className="w-full max-w-md bg-white border border-slate-200 shadow-lg rounded-2xl p-6 sm:p-8 space-y-6">
         <h1 className="text-2xl sm:text-3xl font-semibold text-center text-slate-900">
           Sign in

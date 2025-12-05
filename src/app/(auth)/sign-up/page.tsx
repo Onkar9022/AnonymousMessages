@@ -124,7 +124,7 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white to-slate-100 p-6">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-white to-slate-100 p-6">
       <div className="w-full max-w-md bg-white border border-slate-200 shadow-lg rounded-2xl p-8 space-y-6">
         
         {/* SIGN UP FORM */}

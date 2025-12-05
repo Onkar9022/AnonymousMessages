@@ -110,7 +110,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <main className="relative min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 overflow-hidden">
+    <main className="relative min-h-screen bg-linear-to-b from-indigo-50 via-white to-purple-50 overflow-hidden">
       {/* Floating background blobs */}
       <div className="pointer-events-none absolute -left-32 -top-32 w-[520px] h-[520px] rounded-full bg-indigo-200/40 blur-3xl animate-[pulse_8s_infinite]" />
       <div className="pointer-events-none absolute -right-28 -bottom-28 w-[420px] h-[420px] rounded-full bg-purple-200/30 blur-3xl animate-[float_10s_infinite]" />
@@ -130,7 +130,7 @@ export default function HomePage() {
             Sign in
           </Link>
           <Link href="/sign-up">
-            <Button>Get started</Button>
+            <Button className="bg-linear-to-b bg-indigo-950 text-white hover:underline ">Get started</Button>
           </Link>
         </div>
       </nav>
@@ -207,11 +207,11 @@ export default function HomePage() {
             >
               {/* Slide 1 — Dashboard preview (mock) */}
               <SwiperSlide>
-                <div className="h-80 bg-gradient-to-br from-white to-slate-50 p-6 flex flex-col justify-between">
+                <div className="h-80 bg-linear-to-b from-white to-slate-50 p-6 flex flex-col justify-between">
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="text-xs text-slate-500">Your Dashboard</div>
-                      <div className="text-lg font-semibold text-slate-900">onkar</div>
+                      <div className="text-lg font-semibold text-slate-900">Your Name</div>
                     </div>
                     <div className="text-sm text-slate-500">2 new</div>
                   </div>
@@ -234,7 +234,7 @@ export default function HomePage() {
 
               {/* Slide 2 — Share link */}
               <SwiperSlide>
-                <div className="h-80 p-6 bg-gradient-to-b from-indigo-50 to-white flex flex-col justify-between">
+                <div className="h-80 p-6 bg-linear-to-b from-indigo-50 to-white flex flex-col justify-between">
                   <div>
                     <div className="text-xs text-slate-500">Share</div>
                     <div className="text-lg font-semibold text-slate-900">your link</div>
@@ -253,7 +253,7 @@ export default function HomePage() {
 
               {/* Slide 3 — Security */}
               <SwiperSlide>
-                <div className="h-80 p-6 bg-gradient-to-b from-purple-50 to-white flex flex-col justify-between">
+                <div className="h-80 p-6 bg-linear-to-b from-purple-50 to-white flex flex-col justify-between">
                   <div>
                     <div className="text-xs text-slate-500">Privacy</div>
                     <div className="text-lg font-semibold text-slate-900">We prioritize your privacy</div>
@@ -273,7 +273,7 @@ export default function HomePage() {
           </Card>
 
           {/* 🌟 Testimonials Carousel with Avatars */}
-          <section id="testimonials" className="relative z-10 py-20 bg-gradient-to-br from-white via-indigo-50 to-purple-50">
+          <section id="testimonials" className="relative z-10 py-20 bg-linear-to-b from-white via-indigo-50 to-purple-50">
             <div className="max-w-6xl mx-auto px-6">
               <h3 className="text-3xl font-semibold text-center mb-10 text-slate-800">
                 What our users say 💬
@@ -333,7 +333,7 @@ export default function HomePage() {
                       {/* Avatar */}
                       <div className="flex items-center gap-4 mb-4">
                         <div className="relative">
-                          <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500 p-[2px]">
+                          <div className="w-14 h-14 rounded-full bg-linear-to-b from-indigo-500 to-purple-500 p-0.5">
                             <Image
                               src={t.avatar}
                               alt={t.name}
@@ -400,7 +400,7 @@ export default function HomePage() {
       <Separator className="my-12" />
 
       {/* Stats */}
-      <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-12">
+      <section className="bg-linear-to-b from-indigo-600 to-purple-600 text-white py-12">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-4 items-center">
           {STATS.map((s, i) => (
             <motion.div

@@ -6,7 +6,7 @@
 @import "swiper/css/pagination";
 @import "swiper/css/scrollbar";
 
-/* Tailwind/PostCSS custom at-rules removed to avoid editor/linter parse errors.
+/* Tailw/* Tailwind/PostCSS custom at-rules removed to avoid editor/linter parse errors.
    Color variables are defined below in :root and .dark blocks and are used
    directly via CSS custom properties. */
 
@@ -88,4 +88,58 @@
     color: var(--foreground);
     min-height: 100vh;
   }
+}
+
+@layer components {
+  /* Base button styles using CSS variables so buttons look correct even
+     if some Tailwind utilities are not generated. The Button component
+     emits `data-slot="button"` and we also set `data-variant` and
+     `data-size` attributes so CSS can style variants.
+  */
+  [data-slot="button"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: var(--radius);
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1;
+    padding: 0.5rem 1rem;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.08s ease, opacity 0.12s ease, background-color 0.12s ease;
+  }
+
+  [data-slot="button"][data-variant="outline"] {
+    background: var(--background);
+    color: var(--foreground);
+    border-color: var(--border);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.02) inset;
+  }
+
+  [data-slot="button"][data-variant="destructive"] {
+    background: var(--destructive);
+    color: white;
+  }
+
+  [data-slot="button"][data-variant="ghost"] {
+    background: transparent;
+    color: var(--foreground);
+    padding: 0.4rem 0.75rem;
+  }
+
+  [data-slot="button"][data-variant="link"] {
+    background: transparent;
+    color: var(--primary);
+    padding: 0;
+    text-decoration: underline;
+  }
+
+  /* Size variants */
+  [data-slot="button"][data-size="sm"] { padding: 0.35rem 0.75rem; font-size: 0.8125rem; }
+  [data-slot="button"][data-size="lg"] { padding: 0.6rem 1.25rem; font-size: 1rem; }
+  [data-slot="button"][data-size="icon"] { width: 2.25rem; height: 2.25rem; padding: 0; }
 }
