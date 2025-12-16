@@ -88,7 +88,7 @@ export default function PublicUserPage() {
     return <div className="p-8 text-center text-slate-500">Loading...</div>;
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-6 bg-gradient-to-br from-white to-slate-100">
+    <div className="min-h-screen flex items-center justify-center p-6 bg-linear-to-br from-white to-slate-100">
       <Card className="max-w-lg w-full p-6 shadow-md border border-slate-200">
         <h1 className="text-2xl font-semibold text-center mb-2">@{username}</h1>
 
