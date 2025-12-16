@@ -6,7 +6,7 @@ export default function AuthLayout({
 }) {
   // No <html> or <body> here!
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="min-h-screen flex items-center   justify-center">
       {children}
       
     </div>
