@@ -48,7 +48,7 @@
 
 // app/api/resend-code/route.ts
 import dbConnect from "@/lib/dbConnect";
-import UserModel from "@/model/User"; // Check this path (app/model vs model)
+import UserModel from "@/app/model/User"; // Check this path (app/model vs model)
 import { sendVerificationEmail } from "@/helpers/sendVerificationEmail";
 
 export const dynamic = 'force-dynamic'; // Forces dynamic behavior
